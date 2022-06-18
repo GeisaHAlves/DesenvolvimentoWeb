@@ -12,7 +12,7 @@ const CadastrarMaterias = () => {
 
   const valorInicial = id ? "" : null;
   const [titulo, setTitulo] = useState(valorInicial);
-  const [professorNome, setprofessorNome] = useState(valorInicial);
+  const [professor_nome, setprofessor_nome] = useState(valorInicial);
  
   useEffect(()=> {
     getMaterias()
@@ -23,7 +23,7 @@ const CadastrarMaterias = () => {
       response.data.forEach(materia => {
         if (materia.id == id) {
           setTitulo(materia.titulo);
-          setprofessorNome(materia.professorNome);
+          setprofessor_nome(materia.professor_nome);
                  }
       })
     });
@@ -34,7 +34,7 @@ const CadastrarMaterias = () => {
       api.put("/materias", {
         id,
         titulo,
-        professorNome,
+        professor_nome,
             }).then((response) => {
         console.log(response);
         if (response.status === 200) {
@@ -51,7 +51,7 @@ const CadastrarMaterias = () => {
     } else {
       api.post("/materias", {
           titulo,
-          professorNome         
+          professor_nome         
         })
         .then((response) => {
           if (response.status === 201) {
@@ -70,7 +70,7 @@ const CadastrarMaterias = () => {
 
   const limparCampos = () => {
     setTitulo("");
-    setprofessorNome("");
+    setprofessor_nome("");
     };
 
   return (
@@ -84,8 +84,8 @@ const CadastrarMaterias = () => {
       <Styles.InputCadastro
         label="Professor"
         variant="outlined"
-        value={professorNome}
-        onChange={(e) => setprofessorNome(e.target.value)}
+        value={professor_nome}
+        onChange={(e) => setprofessor_nome(e.target.value)}
         />
     
       <Styles.ButtonCadastro onClick={cadastrarMaterias}>

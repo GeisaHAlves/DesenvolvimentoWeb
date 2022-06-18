@@ -96,7 +96,7 @@ const MateriasListagem = () => {
               {materias.map((materia) => (
                 <StyledTableRow>
                   <StyledTableCell>{materia.titulo}</StyledTableCell>
-                  <StyledTableCell>{materia.professorNome}</StyledTableCell>
+                  <StyledTableCell>{materia.professor_nome}</StyledTableCell>
                   <StyledTableCell>
                     <Button
                       onClick={() => editarMateria(materia)}
