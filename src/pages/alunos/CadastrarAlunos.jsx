@@ -21,7 +21,7 @@ const CadastrarAlunos = () => {
   const getAlunos = () => {
     api.get("/alunos").then((response) => {
       response.data.forEach(aluno => {
-        if (aluno.id == id) {
+        if (aluno.id === id) {
           setNome(aluno.nome);
           setIdade(aluno.idade);
           setCidade(aluno.cidade);

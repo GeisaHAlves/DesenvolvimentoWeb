@@ -3,7 +3,7 @@ import { TemaContext, UsuarioContext } from "../context";
 import tema from "../tema";
 
 const DefaultPage = (props) => {
-  const { temaSelecionado, setTemaSelecionado } = useContext(TemaContext);
+  const { temaSelecionado } = useContext(TemaContext);
   const { usuario } = useContext(UsuarioContext);
   return (
     <div style={tema[temaSelecionado]}>

@@ -8,7 +8,7 @@ const Login = () => {
   const { setUsuario } = useContext(UsuarioContext);
 
   const efetuarLogin = () => {
-    // axios.post(URLLOGIN, {usuario, senha})
+    // api.post(URLLOGIN, {usuario, senha})
     setUsuario(usuarioInput);
     localStorage.setItem('usuarioLogado', usuarioInput);
   }

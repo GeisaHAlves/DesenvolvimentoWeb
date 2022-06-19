@@ -36,7 +36,7 @@ const AlunosListagem = () => {
   }, []);
 
   const getAlunos = () => {
-    api.get("/alunos").then((response) => {
+    api.get('/alunos').then((response) => {
       setAlunos(response.data);
     });
   };
@@ -99,10 +99,15 @@ const AlunosListagem = () => {
                   <StyledTableCell>{aluno.idade}</StyledTableCell>
                   <StyledTableCell>{aluno.cidade}</StyledTableCell>
                   <StyledTableCell>
-                    <Button onClick={() => editarAluno(aluno)} variant="text">
+                    <Button 
+                    onClick={() => editarAluno(aluno)} 
+                    variant="text"
+                    >
                       <EditIcon />
                     </Button>
-                    <Button onClick={() => deletarAluno(aluno)} variant="text">
+                    <Button 
+                    onClick={() => deletarAluno(aluno)} 
+                    variant="text">
                       <DeleteIcon />
                     </Button>
                   </StyledTableCell>

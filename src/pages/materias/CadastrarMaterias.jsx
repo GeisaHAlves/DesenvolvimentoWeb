@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Styles from "../../components/Styles";
 import Swal from "sweetalert2";
@@ -21,7 +20,7 @@ const CadastrarMaterias = () => {
   const getMaterias = () => {
     api.get("/materias").then((response) => {
       response.data.forEach(materia => {
-        if (materia.id == id) {
+        if (materia.id === id) {
           setTitulo(materia.titulo);
           setprofessor_nome(materia.professor_nome);
                  }

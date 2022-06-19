@@ -5,25 +5,29 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import App from "./components/App";
 import DefaultPage from "./components/DefaultPage";
-import { TemaProvider, UsuarioProvider } from "./context";
+import { TemaProvider, UsuarioProvider, AlunoProvider, MateriaProvider } from "./context";
 
 ReactDOM.render(
   <React.StrictMode>
     <UsuarioProvider>
       <TemaProvider>
-        {/* 
+        <AlunoProvider>
+          <MateriaProvider>
+          {/* 
           DefaultPage
           É só uma div, que pega o tema, pra incluir no fundo da página
         */}
-        <DefaultPage>
-          <BrowserRouter>
-            {/* 
+          <DefaultPage>
+            <BrowserRouter>
+              {/* 
               Navbar => possui o botão de escolha do tema
             */}
-            <Navbar />
-            <App />
-          </BrowserRouter>
-        </DefaultPage>
+              <Navbar />
+              <App />
+            </BrowserRouter>
+          </DefaultPage>
+          </MateriaProvider>
+        </AlunoProvider>
       </TemaProvider>
     </UsuarioProvider>
   </React.StrictMode>,

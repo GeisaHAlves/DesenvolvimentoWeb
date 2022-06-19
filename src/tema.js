@@ -3,6 +3,6 @@ export default {
     backgroundColor: "#fff",
   },
   escuro: {
-    backgroundColor: "#000",
+    backgroundColor: "#023",
   },
 };
