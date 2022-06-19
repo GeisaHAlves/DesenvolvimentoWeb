@@ -1,13 +1,13 @@
 import { useRoutes } from "react-router-dom";
-import MateriasListagem from '../pages/materias/MateriasListagem';
-import AlunosListagem from '../pages/alunos/AlunosListagem';
-import CadastrarAlunos from "../pages/alunos/CadastrarAlunos";
-import CadastrarMaterias from "../pages/materias/CadastrarMaterias";
+import MateriasListagem from './pages/materias/MateriasListagem';
+import AlunosListagem from './pages/alunos/AlunosListagem';
+import CadastrarAlunos from "./pages/alunos/CadastrarAlunos";
+import CadastrarMaterias from "./pages/materias/CadastrarMaterias";
 import Container from '@mui/material/Container';
 import { useContext } from "react";
-import { TemaContext } from "../context";
-import tema from "../tema";
-import Login from "../pages/Login";
+import { TemaContext } from "./context";
+import tema from "./tema";
+import Login from "./pages/Login";
 
 const Routes = () => {
   const routes = useRoutes([
