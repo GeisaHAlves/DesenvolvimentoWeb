@@ -8,7 +8,7 @@ const DefaultPage = (props) => {
   return (
     <div style={tema[temaSelecionado]}>
       {props.children}
-      <div
+      {/* <div
         style={{
           width: "100%",
           height: "50px",
@@ -18,10 +18,10 @@ const DefaultPage = (props) => {
           position: 'fixed',
           bottom: 0
         }}
-      >
+      > */}
         <div style={{ alignSelf: "center" }}>{usuario}</div>
       </div>
-    </div>
+    // </div>
   );
 };
 

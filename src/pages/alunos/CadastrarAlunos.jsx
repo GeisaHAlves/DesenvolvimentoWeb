@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Styles from "../../components/Styles";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router";
 import api from "../../services/Api";
+import { AlunosContext } from "../../context"
 
 const CadastrarAlunos = () => {
   const { id } = useParams();
@@ -13,15 +14,25 @@ const CadastrarAlunos = () => {
   const [nome, setNome] = useState(valorInicial);
   const [idade, setIdade] = useState(valorInicial);
   const [cidade, setCidade] = useState(valorInicial);
+  const {alunos} = useContext(AlunosContext)
 
   useEffect(()=> {
-    getAlunos()
+    if(alunos.length > 0){
+      const alunoSelecionado = alunos.find(aluno => {
+        return aluno.id === parseInt(id)
+      })
+      setNome(alunoSelecionado.nome);
+      setIdade(alunoSelecionado.idade);
+      setCidade(alunoSelecionado.cidade);
+    }else{
+      getAlunos()
+    }
   }, []);
 
   const getAlunos = () => {
     api.get("/alunos").then((response) => {
       response.data.forEach(aluno => {
-        if (aluno.id === id) {
+        if (aluno.id === parseInt(id)) {
           setNome(aluno.nome);
           setIdade(aluno.idade);
           setCidade(aluno.cidade);
@@ -93,6 +104,7 @@ const CadastrarAlunos = () => {
         onChange={(e) => setIdade(e.target.value)}
       />
       <Styles.InputCadastro
+        
         label="Cidade"
         variant="outlined"
         value={cidade}

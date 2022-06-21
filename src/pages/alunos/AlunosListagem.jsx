@@ -7,7 +7,7 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { StyledTableCell, StyledTableRow } from "./styles";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import Swal from "sweetalert2";
@@ -16,11 +16,12 @@ import { useNavigate } from "react-router-dom";
 import Lottie from "react-lottie";
 import animationData from "../../lotties/78259-loading.json";
 import api from "../../services/Api"
+import { AlunosContext } from "../../context";
 
 const AlunosListagem = () => {
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
-  const [alunos, setAlunos] = useState([]);
+  const {alunos, setAlunos} = useContext(AlunosContext);
 
   const defaultOptions = {
     loop: true,
@@ -65,19 +66,6 @@ const AlunosListagem = () => {
   const editarAluno = (aluno) => {
     navigate(`/editar-alunos/${aluno.id}`);
   };
-
-  // SE FOSSE USAR A ABSTRAÇÃO (aula 4)
-  // const listaCampos = [
-  //   "nome",
-  //   "idade",
-  //   "cidade"
-  // ];
-
-  // return (
-  //   <Box sx={{ marginTop: "25px" }}>
-  //     <TabelaSerratec listaCampos={listaCampos} listaValores={alunos} />
-  //   </Box>
-  // );
 
   return (
     <Box sx={{ marginTop: "25px" }}>

@@ -36,38 +36,36 @@ export const UsuarioProvider = ({children}) => {
   );
 };
 
-export const AlunoContext = createContext();
-export const AlunoProvider = ({children}) => {
-  const [aluno, setAluno] = useState(
-    localStorage.getItem('aluno')
-  );
+export const AlunosContext = createContext();
+export const AlunosProvider = ({children}) => {
+  const [alunos, setAlunos] = useState([]);
 
   return (
-    <AlunoContext.Provider
+    <AlunosContext.Provider
       value={{
-        aluno,
-        setAluno,
+        alunos,
+        setAlunos,
       }}
     >
       {children}
-    </AlunoContext.Provider>
+    </AlunosContext.Provider>
   );
 };
 
-export const MateriaContext = createContext();
-export const MateriaProvider = ({children}) => {
-  const [materia, setMateria] = useState(
-    localStorage.getItem('materia')
+export const MateriasContext = createContext();
+export const MateriasProvider = ({children}) => {
+  const [materias, setMaterias] = useState(
+    localStorage.getItem([])
   );
 
   return (
-    <MateriaContext.Provider
+    <MateriasContext.Provider
       value={{
-        materia,
-        setMateria,
+        materias,
+        setMaterias,
       }}
     >
       {children}
-    </MateriaContext.Provider>
+    </MateriasContext.Provider>
   );
 };

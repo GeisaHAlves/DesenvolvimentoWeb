@@ -20,7 +20,7 @@ const CadastrarMaterias = () => {
   const getMaterias = () => {
     api.get("/materias").then((response) => {
       response.data.forEach(materia => {
-        if (materia.id === id) {
+        if (materia.id == id) {
           setTitulo(materia.titulo);
           setprofessor_nome(materia.professor_nome);
                  }
@@ -79,6 +79,7 @@ const CadastrarMaterias = () => {
         variant="outlined"
         value={titulo}
         onChange={(e) => setTitulo(e.target.value)}
+        // sx={ { backgroundColor: '#fff' } }
       />
       <Styles.InputCadastro
         label="Professor"

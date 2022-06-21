@@ -5,14 +5,14 @@ import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import App from "./App";
 import DefaultPage from "./components/DefaultPage";
-import { TemaProvider, UsuarioProvider, AlunoProvider, MateriaProvider } from "./context";
+import { TemaProvider, UsuarioProvider, AlunosProvider, MateriasProvider } from "./context";
 
 ReactDOM.render(
   <React.StrictMode>
     <UsuarioProvider>
       <TemaProvider>
-        <AlunoProvider>
-          <MateriaProvider>
+        <AlunosProvider>
+          <MateriasProvider>
           {/* 
           DefaultPage
           É só uma div, que pega o tema, pra incluir no fundo da página
@@ -26,8 +26,8 @@ ReactDOM.render(
               <App />
             </BrowserRouter>
           </DefaultPage>
-          </MateriaProvider>
-        </AlunoProvider>
+          </MateriasProvider>
+        </AlunosProvider>
       </TemaProvider>
     </UsuarioProvider>
   </React.StrictMode>,

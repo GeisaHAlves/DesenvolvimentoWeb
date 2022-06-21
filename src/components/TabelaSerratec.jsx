@@ -23,11 +23,6 @@ const TabelaSerratec = ({ listaCampos, listaValores }) => {
               {listaCampos.map((campo) => (
                 <StyledTableCell>{valor[campo]}</StyledTableCell>
               ))}
-              {/* <StyledTableCell>
-                <Button onClick={() => deletarAluno(aluno)} variant="text">
-                  <DeleteIcon />
-                </Button>
-              </StyledTableCell> */}
             </StyledTableRow>
           ))}
         </TableBody>

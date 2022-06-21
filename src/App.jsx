@@ -27,7 +27,7 @@ const App = () => {
   const { temaSelecionado } = useContext(TemaContext);
   // tema.claro ou tema["claro"] fazem a mesma coisa
   return (
-    <Container maxWidth="md" sx={tema[temaSelecionado]}>
+    <Container className="container" maxWidth="md" sx={tema[temaSelecionado]}>
       <Routes />
     </Container>
   );

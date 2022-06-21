@@ -1,5 +1,3 @@
-import { AlunoContext } from "./context";
-
 export default {
   claro: {
     backgroundColor: "#fff",

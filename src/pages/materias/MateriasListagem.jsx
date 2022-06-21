@@ -67,19 +67,6 @@ const MateriasListagem = () => {
     navigate(`/editar-materias/${materia.id}`);
   };
 
-  // SE FOSSE USAR A ABSTRAÇÃO (aula 4)
-  // const listaCampos = [
-  //   "titulo",
-  //   "nomeProfessor",
-  //   "cargaHoraria"
-  // ];
-
-  // return (
-  //   <Box sx={{ marginTop: "25px" }}>
-  //     <TabelaSerratec listaCampos={listaCampos} listaValores={materias} />
-  //   </Box>
-  // );
-
   return (
     <Box sx={{ marginTop: "25px" }}>
       {materias.length > 0 ? (
